@@ -56,6 +56,13 @@ export default class NewStudent extends Component {
         })
         .then((response)=>{
             console.log(response);
+            alert("Succesfully Inserted");
+            this.setState({
+                firstName:'',
+                lastName:'',
+                age:'',
+                nationality:''
+            })
         })
         .catch(err => console.log(err));
     }
