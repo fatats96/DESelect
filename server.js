@@ -68,7 +68,10 @@ db.connect((err)=>{
             if(err){
                 
             }else{
-                lastId = documents[0]._id;
+                if(documents.length > 0)
+                    lastId = documents[0]._id;
+                else
+                    console.log('Server Side: There is no document!!')
             }
         })
     }

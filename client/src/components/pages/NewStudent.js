@@ -43,10 +43,14 @@ export default class NewStudent extends Component {
     }
 
     onSubmit = () =>{
-        if(StudentMod.age>130 || StudentMod.age<0){
+        //230  true
+        if(this.state.age>130 || this.state.age<0){
             alert("Please Fill Age Values Within This Range: 0 - 130")
             return;
         }
+
+        if(this.state.firstName == '' ||this.state.lastName == '' ||this.state.nationality == '' )
+            return;
 
         HttpReq.post('save',{
             firstName:this.state.firstName,
